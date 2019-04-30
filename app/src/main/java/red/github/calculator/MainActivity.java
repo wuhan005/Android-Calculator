@@ -9,10 +9,12 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView resultBox, controlBox;
-    private Number calResult = 0;
+    private Integer calResult = 0;
+    private Boolean newNumber = false;
+    private Boolean first = true;
     private String nowControl = "";
 
-    private Number num1, num2;
+    private Integer num1 = 0, num2 = 0, nowNum = 1;
 
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, plus, minus, multiply, devide, equal;
     private Button[] numButtons = new Button[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9};
@@ -60,6 +62,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ControlButtonClicked(Integer id){
+        this.newNumber = true;
+
+
+
+        // check the control button is be clicked or not.
+//        if(newNumber){
+        if(this.nowNum == 1){
+            this.num1 = calResult;
+            this.nowNum = 2;
+        }else if(this.nowNum == 2){
+            this.num2 = calResult;
+            this.nowNum = 1;
+        }
+
+        this.calResult = 0;
+//        }
+
         switch (id){
             case R.id.plus:
                 this.nowControl = "plus";
@@ -80,6 +99,37 @@ public class MainActivity extends AppCompatActivity {
             case R.id.equal:
                 break;
         }
+
+        if(!this.first){
+
+            switch (this.nowControl){
+                case "plus":
+                    this.calResult = this.num1 + this.num2;
+                    break;
+                case "minus":
+                    this.calResult = this.num1 - this.num2;
+                    break;
+                case "multiply":
+                    this.calResult = this.num1 * this.num2;
+                    break;
+                case "devide":
+                    this.calResult = this.num1 / this.num2;
+                    break;
+            }
+
+            this.num1 = this.calResult;
+            this.num2 = 0;
+            this.nowNum = 2;
+            this.resultBox.setText(this.calResult.toString());
+        }else{
+            this.first = false;
+        }
+
+        System.out.println(this.num1);
+        System.out.println(this.num2);
+        System.out.println(this.nowControl);
+
+
     }
 
     private void NumButtonClicked(Integer id){
@@ -87,12 +137,20 @@ public class MainActivity extends AppCompatActivity {
             if(this.buttonID[i].equals(id)){
                 String result = calResult.toString();
 
+                if(this.newNumber){
+                    result = "";
+                    this.newNumber = false;
+                }
+
                 if(result.length() >= 8){
                     return;
                 }
 
                 result += String.valueOf(i);
+                System.out.println("=====");
                 this.calResult = Integer.valueOf(result);
+                System.out.println(this.calResult);
+                System.out.println("=====");
                 this.resultBox.setText(this.calResult.toString());
             }
         }
