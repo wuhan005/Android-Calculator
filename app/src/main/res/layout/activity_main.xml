@@ -26,6 +26,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/ControlBox"
+            android:layout_width="410dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="textEnd"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ResultBox" />
+
         <Button
             android:id="@+id/btn7"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -102,7 +115,7 @@
             app:layout_constraintStart_toEndOf="@+id/btn5" />
 
         <Button
-            android:id="@+id/button14"
+            android:id="@+id/devide"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,17 +123,17 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:elevation="0dp"
-            android:text="/"
+            android:text="÷"
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/button15"
+            app:layout_constraintBottom_toTopOf="@+id/multiply"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toEndOf="@+id/btn9" />
 
         <Button
-            android:id="@+id/button15"
+            android:id="@+id/multiply"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,17 +141,17 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:elevation="0dp"
-            android:text="*"
+            android:text="×"
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/button16"
+            app:layout_constraintBottom_toTopOf="@+id/minus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toEndOf="@+id/btn6" />
 
         <Button
-            android:id="@+id/button16"
+            android:id="@+id/minus"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -150,13 +163,13 @@
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/button17"
+            app:layout_constraintBottom_toTopOf="@+id/plus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toEndOf="@+id/btn3" />
 
         <Button
-            android:id="@+id/button17"
+            android:id="@+id/plus"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
