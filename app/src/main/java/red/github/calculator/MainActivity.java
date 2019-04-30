@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Integer num1 = 0, num2 = 0, temp = 0, nowNum = 1;
 
-    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, plus, minus, multiply, devide, equal;
+    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, plus, minus, multiply, devide, equal, AC;
     private Button[] numButtons = new Button[] {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9};
     private Integer[] buttonID = new Integer[] {R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9};
 
@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
         this.resultBox.setText(this.calResult.toString());
 
         this.controlBox = findViewById(R.id.ControlBox);
+
+        this.AC = findViewById(R.id.AC);
+
+        this.AC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calResult = 0;
+                switchNum = false;
+                nowControl = "";
+                First = true;
+                resultBox.setText(calResult.toString());
+                controlBox.setText("");
+            }
+        });
 
         this.InitUI();
     }

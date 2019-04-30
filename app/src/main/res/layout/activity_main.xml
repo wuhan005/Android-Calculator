@@ -55,6 +55,21 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
+            android:id="@+id/AC"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="0dp"
+            android:text="AC"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btn7"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
             android:id="@+id/btn1"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
